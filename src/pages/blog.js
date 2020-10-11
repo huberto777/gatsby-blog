@@ -11,7 +11,7 @@ const BlogPage = ({ data }) => {
   // console.log(nodes)
   return (
     <>
-      <SEO title="Blog" description="" />
+      <SEO title="Blog" />
       <Title title="articles" />
       <section className="blog-page">
         {nodes.map(

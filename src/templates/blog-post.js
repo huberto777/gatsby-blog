@@ -8,6 +8,7 @@ export const query = graphql`
   query querySingleArticle($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
+        title
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 700, maxHeight: 500) {
@@ -22,13 +23,13 @@ export const query = graphql`
 `
 
 const PostLayout = ({ data }) => {
+  const { mdx } = data
   return (
     <>
+      <SEO title={mdx.frontmatter.title} />
       <section className="blog-template">
-        <Image
-          fluid={data.mdx.frontmatter.featuredImage.childImageSharp.fluid}
-        />
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        <Image fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid} />
+        <MDXRenderer>{mdx.body}</MDXRenderer>
       </section>
     </>
   )
