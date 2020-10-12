@@ -794,12 +794,6 @@ About Page
 }
 
 @media screen and (min-width: 992px) {
-  .about-center {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    align-items: center;
-    column-gap: 4rem;
-  }
 
   .about-img {
     grid-column: 1 / span 5;
@@ -809,6 +803,38 @@ About Page
   .about-text {
     grid-column: 6 / -1;
   }
+
+}
+
+.about-btn {
+  background: transparent;
+  border-color: transparent;
+  text-transform: capitalize;
+  text-align: left;
+  font-size: 1.25rem;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+  cursor: pointer;
+  padding: 0.25rem 0;
+  line-height: 1;
+}
+
+.about-btn:hover {
+  color: var(--clr-primary-1);
+  font-weight: bold;
+}
+
+.active-btn {
+  color: var(--clr-primary-5);
+  box-shadow: 0 2px var(--clr-primary-5);
+  font-weight: bold;
+}
+
+.btn-container {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 /*

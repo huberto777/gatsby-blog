@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import SEO from "../components/SEO"
 import Title from "../components/Title"
 import Blog from "../components/Blog"
+import PropTypes from 'prop-types'
 
 const BlogPage = ({ data }) => {
   const {
@@ -32,7 +33,7 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allMdx {
+    allMdx(filter: {fileAbsolutePath: {regex: "/articles/"}}) {
       nodes {
         frontmatter {
           title
@@ -50,5 +51,9 @@ export const query = graphql`
     }
   }
 `
+
+BlogPage.propTypes = {
+  data: PropTypes.object.isRequired,
+}
 
 export default BlogPage
