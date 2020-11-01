@@ -23,6 +23,7 @@ export const query = graphql`
 `
 
 const PostLayout = ({ data }) => {
+  // console.log(data)
   const { mdx } = data
   return (
     <>

@@ -37,6 +37,7 @@ Variables
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
   --transition: all 0.3s linear;
+  --transition2: all 2s linear;
   --spacing: 0.2rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -214,7 +215,7 @@ p {
 }
 
 .social-link {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   color: var(--clr-grey-1);
   transition: var(--transition);
 }
@@ -526,39 +527,28 @@ Main-page
     background: var(--clr-white);
   }
 
-  .hero-center {
-    grid-template-columns: repeat(12, 1fr);
-  }
-
-  .hero h4 {
-    font-size: 0.85rem;
-  }
-
-  .hero-info {
-    grid-row: 1/1;
-    grid-column: 1 / span 8;
-  }
-
-  .hero-img {
-    display: block;
-    grid-row: 1/1;
-    grid-column: 6/-1;
-  }
+  
 }
 
-@media screen and (min-width: 1170px) {
-  .hero h4 {
-    font-size: 1rem;
-  }
-
-  .hero-info {
-    grid-column: 1 / span 8;
-  }
-
-  .hero h4 {
-    line-height: 1;
-  }
+.slider-btn {
+  background: transparent;
+  border-color: transparent;
+  text-transform: capitalize;
+  text-align: left;
+  font-size: 1rem;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+  cursor: pointer;
+  padding: 0.5rem 0;
+  line-height: 0.75;
+  outline: none;
 }
+
+.slider-btn:hover {
+  color: var(--clr-primary-1);
+  font-weight: bold;
+}
+
 
 /*
 =============== 
@@ -599,6 +589,11 @@ Gallery
   }
 }
 
+.image-img{
+  outline: none;
+  border: transparent;
+}
+
 
 /*
 =============== 
@@ -619,7 +614,7 @@ Blog
 
 .blog:hover {
   box-shadow: var(--dark-shadow);
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 .blog article {
@@ -690,7 +685,7 @@ Footer
   background: #222;
   text-align: center;
   display: grid;
-  place-items: center;
+  align-items: center;
 }
 
 .footer h4 {
@@ -822,12 +817,14 @@ About Page
 .about-btn:hover {
   color: var(--clr-primary-1);
   font-weight: bold;
+  outline: none;
 }
 
 .active-btn {
   color: var(--clr-primary-5);
   box-shadow: 0 2px var(--clr-primary-5);
   font-weight: bold;
+  outline: none;
 }
 
 .btn-container {
@@ -907,5 +904,21 @@ Blog Template
 */
 .blog-template {
   padding: 2rem;
+}
+
+/*
+================
+Pagination
+================
+*/
+nav.pagination, a {
+  margin: 0 1rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  flex-wrap: wrap;
+  list-style: none;
+  color: var(--clr-primary-5);
+  font-weight: bold;
 }
 

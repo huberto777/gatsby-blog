@@ -3,12 +3,10 @@ import { graphql } from "gatsby"
 import SEO from "../components/SEO"
 import Title from "../components/Title"
 import Blog from "../components/Blog"
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 
 const BlogPage = ({ data }) => {
-  const {
-    allMdx: { nodes },
-  } = data
+  const { nodes } = data.allMdx
   // console.log(nodes)
   return (
     <>
@@ -33,7 +31,7 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allMdx(filter: {fileAbsolutePath: {regex: "/articles/"}}) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/articles/" } }) {
       nodes {
         frontmatter {
           title

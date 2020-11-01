@@ -18,14 +18,14 @@ const data = [
   },
   {
     id: 4,
-    text: "gallery",
-    url: "/gallery/",
+    text: "images",
+    url: "/images/1",
   },
   {
     id: 5,
     text: "contact",
     url: "/contact/",
-  }
+  },
 ]
 
 const tempLinks = data.map(link => {
